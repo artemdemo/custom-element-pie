@@ -1,0 +1,31 @@
+:root {
+    --pie-light-color: #40c4ff;
+    --pie-dark-color: #01579b;
+    --pie-shadow-color: #003f71;
+}
+
+.pie {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--pie-dark-color);
+    background-image: linear-gradient(to right, transparent 50%, var(--pie-light-color) 0),
+                      radial-gradient(circle, var(--pie-shadow-color) 10%, var(--pie-dark-color) 70%);
+    color: transparent;
+    text-align: center;
+    cursor: pointer;
+}
+    .pie__inner {
+        position: absolute;
+        top: 0; left: 50%;
+        width: 50%; height: 100%;
+        border-radius: 0 100% 100% 0 / 50%;
+        background-color: inherit;
+        transform-origin: left;
+        transform: rotate(10deg);
+        background-image: radial-gradient(circle at 0 50%, var(--pie-shadow-color) 10%, var(--pie-dark-color) 70%);
+    }
+    .pie__inner_second-half {
+        background: var(--pie-light-color);
+    }
